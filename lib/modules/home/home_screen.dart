@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:modern_movie_app/data/services/api_service.dart';
 import 'package:modern_movie_app/modules/auth/components/background_gradient_card.dart';
 import 'package:modern_movie_app/modules/components/custom_appbar.dart';
 import 'package:modern_movie_app/modules/home/components/category_tiles.dart';
 import 'package:modern_movie_app/modules/home/components/latest_movie_tiles.dart';
+import 'package:modern_movie_app/modules/home/components/upcoming_movie_tiles.dart';
 import 'package:modern_movie_app/resources/app_colors.dart';
 import 'package:modern_movie_app/resources/app_typography.dart';
 
@@ -53,8 +53,21 @@ class HomeScreen extends StatelessWidget {
             ),
             SizedBox(height: 10.h),
             SizedBox(
-              height: 200.h,
+              height: 170.h,
               child: LatestMovieTiles(),
+            ),
+            Padding(
+              padding: EdgeInsets.symmetric(horizontal: 20.w),
+              child: Text(
+                "Upcoming",
+                style: AppTypography.kBold16
+                    .copyWith(color: AppColors.kWhiteColor),
+              ),
+            ),
+            SizedBox(height: 10.h),
+            SizedBox(
+              height: 110.h,
+              child: UpcomingMovieTiles(),
             )
           ],
         ),

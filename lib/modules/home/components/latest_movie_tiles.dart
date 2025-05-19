@@ -14,7 +14,6 @@ class LatestMovieTiles extends StatefulWidget {
 class _LatestMovieTilesState extends State<LatestMovieTiles> {
   @override
   void initState() {
-    // to call the API directly without pressing any button
     super.initState();
     fetchAPI();
   }
@@ -22,7 +21,6 @@ class _LatestMovieTilesState extends State<LatestMovieTiles> {
   List<dynamic> movies = [];
 
   void fetchAPI() async {
-    // created seperate class for APIs so we can use it in other screens as well
     List<dynamic> jsonData = await ApiService().fetchMovies();
     setState(() {
       movies = jsonData;
@@ -35,17 +33,17 @@ class _LatestMovieTilesState extends State<LatestMovieTiles> {
       padding: EdgeInsets.symmetric(horizontal: 20.w),
       physics: BouncingScrollPhysics(),
       scrollDirection: Axis.horizontal,
-      separatorBuilder: (context, index) => SizedBox(width: 20.w),
+      separatorBuilder: (context, index) => SizedBox(width: 12.w),
       itemCount: movies.length,
       itemBuilder: (context, index) => SizedBox(
-        width: 100.w,
+        width: 90.w,
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Container(
-              height: 120.h,
+              height: 110.h,
               decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(10.r),
+                borderRadius: BorderRadius.circular(8.r),
                 image: DecorationImage(
                   image: NetworkImage(movies[index]['Images'][1]),
                   fit: BoxFit.cover,
@@ -57,12 +55,12 @@ class _LatestMovieTilesState extends State<LatestMovieTiles> {
               movies[index]['Title'],
               maxLines: 2,
               overflow: TextOverflow.ellipsis,
-              style: AppTypography.kMedium12
-                  .copyWith(color: AppColors.kWhiteColor),
+              style:
+                  AppTypography.kBold10.copyWith(color: AppColors.kWhiteColor),
             ),
             Text(
               movies[index]["Runtime"],
-              style: AppTypography.kMedium12
+              style: AppTypography.kMedium10
                   .copyWith(color: AppColors.kSmokeColor),
             ),
           ],
