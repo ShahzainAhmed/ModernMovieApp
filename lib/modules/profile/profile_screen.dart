@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:modern_movie_app/models/profile_button_list.dart';
-import 'package:modern_movie_app/modules/components/custom_appbar.dart';
 import 'package:modern_movie_app/modules/profile/components/profile_button_widget.dart';
-import 'package:modern_movie_app/resources/app_assets.dart';
 import 'package:modern_movie_app/resources/app_colors.dart';
 import 'package:modern_movie_app/resources/app_typography.dart';
 
@@ -13,7 +11,7 @@ class ProfileScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: const CustomAppBar(title: "Profile", isBackButton: true),
+      // appBar: const CustomAppBar(title: "Profile", isBackButton: true),
       body: Padding(
         padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 10.h),
         child: Column(
@@ -23,7 +21,7 @@ class ProfileScreen extends StatelessWidget {
               children: [
                 CircleAvatar(
                   radius: 30.r,
-                  foregroundImage: AssetImage(AppAssets.kProfileAvatar),
+                  // foregroundImage: AssetImage(AppAssets.kProfileAvatar),
                   child: CircleAvatar(
                     radius: 28.r,
                     backgroundColor: AppColors.kGreyColor,

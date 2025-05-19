@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 import 'package:modern_movie_app/resources/app_colors.dart';
 
 class BackgroundGradientCard extends StatelessWidget {
@@ -10,12 +9,10 @@ class BackgroundGradientCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: Get.height,
-      width: Get.width,
       decoration: BoxDecoration(
         gradient: LinearGradient(
           begin: Alignment.topRight,
-          end: Alignment.bottomLeft,
+          end: Alignment.center,
           colors: [
             AppColors.kGradient1,
             AppColors.kGradient2,
