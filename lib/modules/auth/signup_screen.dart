@@ -2,14 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:personal_project/controllers/signup_controller.dart';
-import 'package:personal_project/modules/auth/components/background_gradient_card.dart';
-import 'package:personal_project/modules/components/primary_button.dart';
-import 'package:personal_project/resources/app_assets.dart';
-import 'package:personal_project/resources/app_colors.dart';
-import 'package:personal_project/resources/app_typography.dart';
-import 'package:personal_project/routes/app_routes.dart';
-import 'package:personal_project/modules/auth/components/text_field_widget.dart';
+import 'package:modern_movie_app/controllers/signup_controller.dart';
+import 'package:modern_movie_app/modules/auth/components/background_gradient_card.dart';
+import 'package:modern_movie_app/modules/auth/components/text_field_widget.dart';
+import 'package:modern_movie_app/modules/components/primary_button.dart';
+import 'package:modern_movie_app/resources/app_assets.dart';
+import 'package:modern_movie_app/resources/app_colors.dart';
+import 'package:modern_movie_app/resources/app_typography.dart';
+import 'package:modern_movie_app/routes/app_routes.dart';
 
 class SignupScreen extends StatelessWidget {
   SignupScreen({super.key});

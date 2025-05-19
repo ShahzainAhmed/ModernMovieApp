@@ -1,5 +1,5 @@
 import 'package:get/get.dart';
-import 'package:personal_project/controllers/chat_controller.dart';
+import 'package:modern_movie_app/controllers/chat_controller.dart';
 
 class ChatsBinding extends Bindings {
   @override

@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:personal_project/resources/app_colors.dart';
-import 'package:personal_project/resources/app_typography.dart';
+import 'package:modern_movie_app/resources/app_colors.dart';
+import 'package:modern_movie_app/resources/app_typography.dart';
 
 class ChatInputField extends StatelessWidget {
   final TextEditingController controller;

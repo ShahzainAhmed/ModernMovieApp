@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:personal_project/models/message_model.dart';
+import 'package:modern_movie_app/models/message_model.dart';
 
 class ChatController extends GetxController {
   var messages = <MessageModel>[].obs;

@@ -1,15 +1,11 @@
 import 'package:get/get.dart';
-import 'package:personal_project/modules/auth/binding/signup_binding.dart';
-import 'package:personal_project/routes/app_routes.dart';
-import 'package:personal_project/modules/auth/signup_screen.dart';
-import 'package:personal_project/modules/chat/binding/chat_binding.dart';
-import 'package:personal_project/modules/chat/chat_screen.dart';
-import 'package:personal_project/modules/form/binding/form_binding.dart';
-import 'package:personal_project/modules/form/form_screen.dart';
-import 'package:personal_project/modules/home/home_screen.dart';
-import 'package:personal_project/modules/profile/profile_screen.dart';
-import 'package:personal_project/modules/question_answer/qa_screen.dart';
-import 'package:personal_project/modules/welcome_view/welcome_view_screen.dart';
+import 'package:modern_movie_app/modules/auth/binding/signup_binding.dart';
+import 'package:modern_movie_app/modules/auth/signup_screen.dart';
+import 'package:modern_movie_app/modules/chat/binding/chat_binding.dart';
+import 'package:modern_movie_app/modules/chat/chat_screen.dart';
+import 'package:modern_movie_app/modules/home/home_screen.dart';
+import 'package:modern_movie_app/modules/profile/profile_screen.dart';
+import 'package:modern_movie_app/routes/app_routes.dart';
 
 class AppPages {
   AppPages._(); // private
@@ -27,19 +23,7 @@ class AppPages {
       name: AppRoutes.profileScreen,
       page: () => ProfileScreen(),
     ),
-    GetPage(
-      name: AppRoutes.welcomeViewScreen,
-      page: () => WelcomeViewScreen(),
-    ),
-    GetPage(
-      name: AppRoutes.formScreen,
-      binding: FormBinding(),
-      page: () => FormScreen(),
-    ),
-    GetPage(
-      name: AppRoutes.qaScreen,
-      page: () => QaScreen(),
-    ),
+   
     GetPage(
       name: AppRoutes.chatScreen,
       binding: ChatsBinding(),

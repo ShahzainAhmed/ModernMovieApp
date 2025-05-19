@@ -1,5 +1,4 @@
-// ignore_for_file: avoid_print
-import 'package:personal_project/resources/app_assets.dart';
+import 'package:modern_movie_app/resources/app_assets.dart';
 
 final List<Map<String, dynamic>> profileButtonsAccount = [
   {

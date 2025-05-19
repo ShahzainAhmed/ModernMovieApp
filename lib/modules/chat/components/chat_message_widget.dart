@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:personal_project/models/message_model.dart';
-import 'package:personal_project/resources/app_colors.dart';
-
+import 'package:modern_movie_app/models/message_model.dart';
+import 'package:modern_movie_app/resources/app_colors.dart';
 class ChatMessageWidget extends StatelessWidget {
   final MessageModel message;
 

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:personal_project/resources/app_colors.dart';
+import 'package:modern_movie_app/resources/app_colors.dart';
 
 class BackgroundGradientCard extends StatelessWidget {
   final Widget? child;

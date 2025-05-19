@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:personal_project/models/profile_button_list.dart';
-import 'package:personal_project/resources/app_assets.dart';
-import 'package:personal_project/resources/app_colors.dart';
-import 'package:personal_project/resources/app_typography.dart';
-import 'package:personal_project/modules/profile/components/profile_button_widget.dart';
-import 'package:personal_project/modules/components/custom_appbar.dart';
+import 'package:modern_movie_app/models/profile_button_list.dart';
+import 'package:modern_movie_app/modules/components/custom_appbar.dart';
+import 'package:modern_movie_app/modules/profile/components/profile_button_widget.dart';
+import 'package:modern_movie_app/resources/app_assets.dart';
+import 'package:modern_movie_app/resources/app_colors.dart';
+import 'package:modern_movie_app/resources/app_typography.dart';
 
 class ProfileScreen extends StatelessWidget {
   const ProfileScreen({super.key});

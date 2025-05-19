@@ -1,5 +1,5 @@
 import 'package:get/get.dart';
-import 'package:personal_project/controllers/signup_controller.dart';
+import 'package:modern_movie_app/controllers/signup_controller.dart';
 
 class SignupBinding extends Bindings {
   @override

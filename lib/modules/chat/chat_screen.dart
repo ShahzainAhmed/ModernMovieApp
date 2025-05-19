@@ -2,12 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:personal_project/modules/chat/components/chat_message_widget.dart';
-import 'package:personal_project/resources/app_colors.dart';
-import 'package:personal_project/controllers/chat_controller.dart';
-import 'package:personal_project/modules/chat/components/chat_input_field.dart';
-import 'package:personal_project/modules/components/custom_appbar.dart';
-import 'package:personal_project/resources/app_typography.dart';
+import 'package:modern_movie_app/controllers/chat_controller.dart';
+import 'package:modern_movie_app/modules/chat/components/chat_input_field.dart';
+import 'package:modern_movie_app/modules/chat/components/chat_message_widget.dart';
+import 'package:modern_movie_app/modules/components/custom_appbar.dart';
+import 'package:modern_movie_app/resources/app_colors.dart';
+import 'package:modern_movie_app/resources/app_typography.dart';
 
 class ChatScreen extends StatelessWidget {
   ChatScreen({super.key});
