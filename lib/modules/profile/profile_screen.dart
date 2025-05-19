@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:modern_movie_app/models/profile_button_list.dart';
 import 'package:modern_movie_app/modules/components/custom_appbar.dart';
 import 'package:modern_movie_app/modules/profile/components/profile_button_widget.dart';

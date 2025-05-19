@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:modern_movie_app/controllers/signup_controller.dart';
 import 'package:modern_movie_app/modules/auth/components/background_gradient_card.dart';
 import 'package:modern_movie_app/modules/auth/components/text_field_widget.dart';
