@@ -31,6 +31,7 @@ class AppTypography {
   static TextStyle get kLight36 => GoogleFonts.outfit(fontSize: 36.sp, fontWeight: FontWeight.w400);
 
   // Medium
+  static TextStyle get kMedium8 => GoogleFonts.outfit(fontSize: 8.sp, fontWeight: FontWeight.w500);
   static TextStyle get kMedium10 => GoogleFonts.outfit(fontSize: 10.sp, fontWeight: FontWeight.w500);
   static TextStyle get kMedium12 => GoogleFonts.outfit(fontSize: 12.sp, fontWeight: FontWeight.w500);
   static TextStyle get kMedium14 => GoogleFonts.outfit(fontSize: 14.sp, fontWeight: FontWeight.w500);

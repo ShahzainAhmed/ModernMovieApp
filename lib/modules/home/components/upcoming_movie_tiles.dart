@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get/get.dart';
 import 'package:modern_movie_app/data/services/api_service.dart';
 import 'package:modern_movie_app/resources/app_colors.dart';
 import 'package:modern_movie_app/resources/app_typography.dart';
+import 'package:modern_movie_app/routes/app_routes.dart';
 
 class UpcomingMovieTiles extends StatefulWidget {
   const UpcomingMovieTiles({super.key});
@@ -35,58 +37,62 @@ class _UpcomingMovieTilesState extends State<UpcomingMovieTiles> {
       scrollDirection: Axis.horizontal,
       separatorBuilder: (context, index) => SizedBox(width: 12.w),
       itemCount: movies.length,
-      itemBuilder: (context, index) => Container(
-        width: 240.w,
-        decoration: BoxDecoration(
-          image: DecorationImage(
-            image: NetworkImage(movies[index]['Images'][1]),
-            fit: BoxFit.cover,
+      itemBuilder: (context, index) => GestureDetector(
+        onTap: () =>
+            Get.toNamed(AppRoutes.detailScreen, arguments: movies[index]),
+        child: Container(
+          width: 240.w,
+          decoration: BoxDecoration(
+            image: DecorationImage(
+              image: NetworkImage(movies[index]['Images'][1]),
+              fit: BoxFit.cover,
+            ),
+            borderRadius: BorderRadius.circular(8.r),
+            color: AppColors.kDarkGreyColor,
           ),
-          borderRadius: BorderRadius.circular(8.r),
-          color: AppColors.kDarkGreyColor,
-        ),
-        child: Padding(
-          padding: EdgeInsets.symmetric(horizontal: 10.w, vertical: 10.h),
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.end,
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Text(
-                movies[index]['Title'],
-                style: AppTypography.kMedium12
-                    .copyWith(color: AppColors.kWhiteColor),
-              ),
-              SizedBox(height: 6.h),
-              Row(
-                children: [
-                  Container(
-                    padding:
-                        EdgeInsets.symmetric(horizontal: 6.w, vertical: 2.h),
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(4.r),
-                      color: AppColors.kSmokeColor,
+          child: Padding(
+            padding: EdgeInsets.symmetric(horizontal: 10.w, vertical: 10.h),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.end,
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  movies[index]['Title'],
+                  style: AppTypography.kMedium12
+                      .copyWith(color: AppColors.kWhiteColor),
+                ),
+                SizedBox(height: 6.h),
+                Row(
+                  children: [
+                    Container(
+                      padding:
+                          EdgeInsets.symmetric(horizontal: 6.w, vertical: 2.h),
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(4.r),
+                        color: AppColors.kSmokeColor.withAlpha(140),
+                      ),
+                      child: Text(
+                        movies[index]['Genre'],
+                        style: AppTypography.kMedium8
+                            .copyWith(color: AppColors.kWhiteColor),
+                      ),
                     ),
-                    child: Text(
-                      movies[index]['Genre'],
-                      style: AppTypography.kLight8
+                    SizedBox(width: 6.w),
+                    Text(
+                      movies[index]['Released'],
+                      style: AppTypography.kMedium8
                           .copyWith(color: AppColors.kWhiteColor),
                     ),
-                  ),
-                  SizedBox(width: 6.w),
-                  Text(
-                    movies[index]['Released'],
-                    style: AppTypography.kLight8
-                        .copyWith(color: AppColors.kWhiteColor),
-                  ),
-                  SizedBox(width: 6.w),
-                  Text(
-                    movies[index]['Runtime'],
-                    style: AppTypography.kLight8
-                        .copyWith(color: AppColors.kWhiteColor),
-                  )
-                ],
-              )
-            ],
+                    SizedBox(width: 6.w),
+                    Text(
+                      movies[index]['Runtime'],
+                      style: AppTypography.kMedium8
+                          .copyWith(color: AppColors.kWhiteColor),
+                    )
+                  ],
+                )
+              ],
+            ),
           ),
         ),
       ),

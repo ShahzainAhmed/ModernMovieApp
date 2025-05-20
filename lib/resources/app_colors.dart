@@ -21,4 +21,5 @@ class AppColors {
   static const Color kTealColor = Color(0xff75d4c6);
   static const Color kLightGreenColor = Color(0xffcbf0ea);
   static const Color kRedColor = Colors.red;
+  static const Color kYellowColor = Colors.amber;
 }

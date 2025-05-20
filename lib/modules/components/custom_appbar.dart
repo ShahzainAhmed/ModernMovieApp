@@ -39,16 +39,24 @@ class CustomAppBar extends StatelessWidget {
             padding: EdgeInsets.all(9),
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(20.r),
-              color: AppColors.kSmokeColor,
+              color: AppColors.kSmokeColor.withAlpha(50),
             ),
             child: Row(
               children: [
-                SvgPicture.string(AppAssets.searchIcon,
-                    height: 16.h, width: 16.w),
+                SvgPicture.string(
+                  AppAssets.searchIcon,
+                  height: 16.h,
+                  width: 16.w,
+                  colorFilter: ColorFilter.mode(
+                    AppColors.kWhiteColor,
+                    BlendMode.srcIn,
+                  ),
+                ),
+                SizedBox(width: 6.w),
                 Text(
                   'Search',
                   style: AppTypography.kLight12
-                      .copyWith(color: AppColors.kDarkGreyColor),
+                      .copyWith(color: AppColors.kSmokeColor),
                 )
               ],
             ),
@@ -58,12 +66,16 @@ class CustomAppBar extends StatelessWidget {
             padding: EdgeInsets.all(8),
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(20.r),
-              color: AppColors.kSmokeColor,
+              color: AppColors.kSmokeColor.withAlpha(50),
             ),
             child: SvgPicture.string(
               AppAssets.notificationIcon,
               height: 16.h,
               width: 16.w,
+              colorFilter: ColorFilter.mode(
+                AppColors.kWhiteColor,
+                BlendMode.srcIn,
+              ),
             ),
           )
         ],
