@@ -18,9 +18,10 @@ class ImageContainerDetailsWidget extends StatelessWidget {
     return Stack(
       children: [
         Positioned.fill(
-          child: Image.network(
-            movieData['Images'][0] ?? '',
+          child: Image.asset(
+            movieData.image,
             fit: BoxFit.cover,
+            alignment: Alignment.topCenter,
           ),
         ),
         Positioned.fill(
@@ -72,7 +73,7 @@ class ImageContainerDetailsWidget extends StatelessWidget {
               ),
               const Spacer(),
               Text(
-                movieData['Title'] ?? 'No Title',
+                movieData.title,
                 style: AppTypography.kBold18.copyWith(
                   color: AppColors.kWhiteColor,
                 ),
@@ -80,7 +81,7 @@ class ImageContainerDetailsWidget extends StatelessWidget {
               Row(
                 children: [
                   Text(
-                    movieData['Year'] ?? '',
+                    movieData.yearOfRelease,
                     style: AppTypography.kMedium12.copyWith(
                       color: AppColors.kSmokeColor,
                     ),
@@ -100,7 +101,7 @@ class ImageContainerDetailsWidget extends StatelessWidget {
                   }),
                   SizedBox(width: 8.w),
                   Text(
-                    movieData['Runtime'] ?? '',
+                    movieData.duration,
                     style: AppTypography.kMedium12.copyWith(
                       color: AppColors.kSmokeColor,
                     ),
@@ -119,7 +120,7 @@ class ImageContainerDetailsWidget extends StatelessWidget {
                   color: AppColors.kSmokeColor.withAlpha(50),
                 ),
                 child: Text(
-                  movieData['Genre'] ?? '',
+                  movieData.genre,
                   style: AppTypography.kMedium10.copyWith(
                     color: AppColors.kWhiteColor,
                   ),

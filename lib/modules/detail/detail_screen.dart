@@ -92,12 +92,12 @@ class DetailScreen extends StatelessWidget {
                   Padding(
                     padding: EdgeInsets.symmetric(horizontal: 20.w),
                     child: Text(
-                      movieData['Plot'],
+                      movieData.description,
                       style: AppTypography.kLight12
                           .copyWith(color: AppColors.kWhiteColor),
                     ),
                   ),
-                  SizedBox(height: 20.h),
+                  SizedBox(height: 30.h),
                   Center(
                     child: ButtonWidgets(
                       title: 'Read more',
@@ -111,6 +111,7 @@ class DetailScreen extends StatelessWidget {
                       iconSize: 20,
                     ),
                   ),
+                  SizedBox(height: 10.h),
                   Padding(
                     padding: EdgeInsets.symmetric(horizontal: 20.w),
                     child: Text(

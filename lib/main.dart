@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
-import 'package:modern_movie_app/resources/app_themes.dart';
 import 'package:modern_movie_app/routes/app_pages.dart';
 import 'package:modern_movie_app/routes/app_routes.dart';
 
@@ -15,7 +13,6 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    SystemChrome.setSystemUIOverlayStyle(defaultOverlay);
     return ScreenUtilInit(
       minTextAdapt: true,
       child: GetMaterialApp(
