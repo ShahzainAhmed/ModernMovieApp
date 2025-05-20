@@ -1,3 +1,4 @@
+import 'package:bounce/bounce.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -31,35 +32,37 @@ class PrimaryButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ElevatedButton(
-      onPressed: onTap,
-      style: ElevatedButton.styleFrom(
-        elevation: 0,
-        backgroundColor: backgroundColor ?? AppColors.kPrimaryColor,
-        minimumSize: Size(Get.width, 40.h),
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(borderRadius ?? 30.r),
-          side: BorderSide(
-            color: borderColor ?? Colors.transparent,
-          ),
-        ),
-      ),
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          if (svgIcon != null && svgIcon!.isNotEmpty) ...[
-            SvgPicture.string(svgIcon!, height: 18.h, width: 18.w),
-            SizedBox(width: 10.w),
-          ],
-          Text(
-            title,
-            style: AppTypography.kMedium10.copyWith(
-              fontSize: fontSize ?? 16.sp,
-              fontWeight: fontWeight ?? FontWeight.w600,
-              color: textColor ?? AppColors.kWhiteColor,
+    return Bounce(
+      child: ElevatedButton(
+        onPressed: onTap,
+        style: ElevatedButton.styleFrom(
+          elevation: 0,
+          backgroundColor: backgroundColor ?? AppColors.kPrimaryColor,
+          minimumSize: Size(Get.width, 40.h),
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(borderRadius ?? 30.r),
+            side: BorderSide(
+              color: borderColor ?? Colors.transparent,
             ),
           ),
-        ],
+        ),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            if (svgIcon != null && svgIcon!.isNotEmpty) ...[
+              SvgPicture.string(svgIcon!, height: 18.h, width: 18.w),
+              SizedBox(width: 10.w),
+            ],
+            Text(
+              title,
+              style: AppTypography.kBold10.copyWith(
+                fontSize: fontSize ?? 16.sp,
+                fontWeight: fontWeight ?? FontWeight.w600,
+                color: textColor ?? AppColors.kWhiteColor,
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }

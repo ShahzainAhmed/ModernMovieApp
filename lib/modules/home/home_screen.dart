@@ -1,3 +1,4 @@
+import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:modern_movie_app/modules/auth/components/background_gradient_card.dart';
@@ -20,56 +21,84 @@ class HomeScreen extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            CustomAppBar(),
+            FadeInUp(
+              controller: (controller) => controller = controller,
+              delay: const Duration(milliseconds: 500),
+              child: CustomAppBar(),
+            ),
             SizedBox(height: 20.h),
-            Padding(
-              padding: EdgeInsets.symmetric(horizontal: 20.w),
-              child: Text(
-                "Discover Your Next \nFavorite Movie.",
-                style: AppTypography.kBold24
-                    .copyWith(color: AppColors.kWhiteColor),
+            FadeInUp(
+              controller: (controller) => controller = controller,
+              delay: const Duration(milliseconds: 600),
+              child: Padding(
+                padding: EdgeInsets.symmetric(horizontal: 20.w),
+                child: Text(
+                  "Discover Your Next \nFavorite Movie.",
+                  style: AppTypography.kBold24
+                      .copyWith(color: AppColors.kWhiteColor),
+                ),
               ),
             ),
             SizedBox(height: 20.h),
-            CategoryTiles(),
+            FadeInRight(
+              controller: (controller) => controller = controller,
+              delay: const Duration(milliseconds: 700),
+              child: CategoryTiles(),
+            ),
             SizedBox(height: 20.h),
-            Padding(
-              padding: EdgeInsets.symmetric(horizontal: 20.w),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Text(
-                    "Latest movies",
-                    style: AppTypography.kBold16
-                        .copyWith(color: AppColors.kWhiteColor),
-                  ),
-                  Text(
-                    "See all",
-                    style: AppTypography.kBold12
-                        .copyWith(color: AppColors.kBlueColor),
-                  )
-                ],
+            FadeInUp(
+              controller: (controller) => controller = controller,
+              delay: const Duration(milliseconds: 800),
+              child: Padding(
+                padding: EdgeInsets.symmetric(horizontal: 20.w),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Text(
+                      "Latest movies",
+                      style: AppTypography.kBold16
+                          .copyWith(color: AppColors.kWhiteColor),
+                    ),
+                    Text(
+                      "See all",
+                      style: AppTypography.kBold12
+                          .copyWith(color: AppColors.kBlueColor),
+                    )
+                  ],
+                ),
               ),
             ),
             SizedBox(height: 10.h),
             SizedBox(
               height: 170.h,
-              child: LatestMovieTiles(),
+              child: FadeInRight(
+                controller: (controller) => controller = controller,
+                delay: const Duration(milliseconds: 900),
+                child: LatestMovieTiles(),
+              ),
             ),
             SizedBox(height: 20.h),
-            Padding(
-              padding: EdgeInsets.symmetric(horizontal: 20.w),
-              child: Text(
-                "Upcoming",
-                style: AppTypography.kBold16
-                    .copyWith(color: AppColors.kWhiteColor),
+            FadeInUp(
+              controller: (controller) => controller = controller,
+              delay: const Duration(milliseconds: 1000),
+              child: Padding(
+                padding: EdgeInsets.symmetric(horizontal: 20.w),
+                child: Text(
+                  "Upcoming",
+                  style: AppTypography.kBold16
+                      .copyWith(color: AppColors.kWhiteColor),
+                ),
               ),
             ),
             SizedBox(height: 10.h),
             SizedBox(
               height: 110.h,
-              child: UpcomingMovieTiles(),
-            )
+              child: FadeInRight(
+                controller: (controller) => controller = controller,
+                delay: const Duration(milliseconds: 1100),
+                child: UpcomingMovieTiles(),
+              ),
+            ),
           ],
         ),
       ),
