@@ -3,7 +3,6 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:modern_movie_app/models/profile_button_list.dart';
 import 'package:modern_movie_app/modules/auth/components/background_gradient_card.dart';
-import 'package:modern_movie_app/modules/components/custom_appbar.dart';
 import 'package:modern_movie_app/modules/profile/components/profile_button_widget.dart';
 import 'package:modern_movie_app/resources/app_assets.dart';
 import 'package:modern_movie_app/resources/app_colors.dart';

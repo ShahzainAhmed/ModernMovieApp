@@ -56,6 +56,7 @@ class HomeScreen extends StatelessWidget {
               height: 170.h,
               child: LatestMovieTiles(),
             ),
+            SizedBox(height: 20.h),
             Padding(
               padding: EdgeInsets.symmetric(horizontal: 20.w),
               child: Text(

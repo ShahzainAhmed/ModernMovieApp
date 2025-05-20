@@ -20,7 +20,7 @@ class MyApp extends StatelessWidget {
         title: 'Flutter Demo',
         getPages: AppPages.allPages,
         // theme: Themes.primaryTheme,
-        initialRoute: AppRoutes.homeScreen,
+        initialRoute: AppRoutes.onboardingScreen,
       ),
     );
   }
