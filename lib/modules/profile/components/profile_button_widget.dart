@@ -21,19 +21,21 @@ class ProfileButtonWidget extends StatelessWidget {
         onPressed: () {},
         style: ElevatedButton.styleFrom(
           padding: EdgeInsets.zero,
-          backgroundColor: AppColors.kWhiteColor,
+          backgroundColor: AppColors.kDarkGreyColor,
           minimumSize: Size(Get.width, 40.h),
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(12.r),
           ),
         ),
         child: ListTile(
-          leading: SvgPicture.string(icon),
+          leading: SvgPicture.string(icon, color: AppColors.kWhiteColor),
           title: Text(
             title,
-            style: AppTypography.kMedium14,
+            style:
+                AppTypography.kMedium14.copyWith(color: AppColors.kWhiteColor),
           ),
-          trailing: Icon(Icons.arrow_forward_ios, size: 16.sp),
+          trailing: Icon(Icons.arrow_forward_ios,
+              size: 16.sp, color: AppColors.kWhiteColor),
         ));
   }
 }

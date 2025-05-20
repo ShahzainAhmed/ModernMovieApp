@@ -1,7 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get/get.dart';
 import 'package:modern_movie_app/models/profile_button_list.dart';
+import 'package:modern_movie_app/modules/auth/components/background_gradient_card.dart';
+import 'package:modern_movie_app/modules/components/custom_appbar.dart';
 import 'package:modern_movie_app/modules/profile/components/profile_button_widget.dart';
+import 'package:modern_movie_app/resources/app_assets.dart';
 import 'package:modern_movie_app/resources/app_colors.dart';
 import 'package:modern_movie_app/resources/app_typography.dart';
 
@@ -11,76 +15,72 @@ class ProfileScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      // appBar: const CustomAppBar(title: "Profile", isBackButton: true),
-      body: Padding(
-        padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 10.h),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Row(
-              children: [
-                CircleAvatar(
-                  radius: 30.r,
-                  // foregroundImage: AssetImage(AppAssets.kProfileAvatar),
-                  child: CircleAvatar(
-                    radius: 28.r,
-                    backgroundColor: AppColors.kGreyColor,
+      body: BackgroundGradientCard(
+        child: Padding(
+          padding: EdgeInsets.only(left: 20.w, right: 20.w, top: 50.h),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              Row(
+                children: [
+                  CircleAvatar(
+                    backgroundColor: AppColors.kSmokeColor.withAlpha(100),
+                    child: IconButton(
+                      padding: EdgeInsets.zero,
+                      onPressed: () => Get.back(),
+                      icon: Icon(
+                        Icons.arrow_back_ios_new,
+                        color: AppColors.kWhiteColor,
+                      ),
+                    ),
                   ),
+                  Expanded(
+                    child: Center(
+                      child: Text(
+                        "Profile Settings",
+                        style: AppTypography.kMedium16
+                            .copyWith(color: AppColors.kWhiteColor),
+                      ),
+                    ),
+                  ),
+                  SizedBox(width: 48.w),
+                ],
+              ),
+              SizedBox(height: 40.h),
+              CircleAvatar(
+                radius: 50.r,
+                foregroundImage: AssetImage(AppAssets.kProfilePicture),
+                child: CircleAvatar(
+                  radius: 28.r,
+                  backgroundColor: AppColors.kGreyColor,
                 ),
-                SizedBox(width: 16.w),
-                Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
+              ),
+              SizedBox(height: 10.h),
+              Text(
+                "Shahzain Ahmed",
+                style: AppTypography.kBold18
+                    .copyWith(color: AppColors.kWhiteColor),
+              ),
+              SizedBox(height: 4.h),
+              Text(
+                "Mobile App Developer",
+                style: AppTypography.kLight12
+                    .copyWith(color: AppColors.kSmokeColor),
+              ),
+              SizedBox(height: 40.h),
+              ...profileButtonsAccount.map((button) {
+                return Column(
                   children: [
-                    Text(
-                      "Joy Augustin",
-                      style: AppTypography.kBold18,
+                    ProfileButtonWidget(
+                      title: button['title'],
+                      icon: button['icon'],
                     ),
-                    Text(
-                      "joy@augustin.com",
-                      style: AppTypography.kLight12
-                          .copyWith(color: AppColors.kGreyColor.withAlpha(150)),
-                    ),
+                    SizedBox(height: 16.h),
                   ],
-                ),
-              ],
-            ),
-            SizedBox(height: 20.h),
-            Text(
-              "Account",
-              style: AppTypography.kMedium14
-                  .copyWith(color: AppColors.kDarkGreyColor),
-            ),
-            SizedBox(height: 10.h),
-            ...profileButtonsAccount.map((button) {
-              return Column(
-                children: [
-                  ProfileButtonWidget(
-                    title: button['title'],
-                    icon: button['icon'],
-                  ),
-                  SizedBox(height: 10.h),
-                ],
-              );
-            }),
-            SizedBox(height: 10.h),
-            Text(
-              "General",
-              style: AppTypography.kMedium14
-                  .copyWith(color: AppColors.kDarkGreyColor),
-            ),
-            SizedBox(height: 10.h),
-            ...profileButtonsGeneral.map((button) {
-              return Column(
-                children: [
-                  ProfileButtonWidget(
-                    title: button['title'],
-                    icon: button['icon'],
-                  ),
-                  SizedBox(height: 10.h),
-                ],
-              );
-            }),
-          ],
+                );
+              }),
+            ],
+          ),
         ),
       ),
     );

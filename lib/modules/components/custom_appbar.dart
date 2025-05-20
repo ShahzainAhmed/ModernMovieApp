@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:get/get.dart';
 import 'package:modern_movie_app/resources/app_assets.dart';
 import 'package:modern_movie_app/resources/app_colors.dart';
 import 'package:modern_movie_app/resources/app_typography.dart';
+import 'package:modern_movie_app/routes/app_routes.dart';
 
 class CustomAppBar extends StatelessWidget {
   const CustomAppBar({super.key});
@@ -14,9 +16,12 @@ class CustomAppBar extends StatelessWidget {
       padding: EdgeInsets.symmetric(horizontal: 20.w),
       child: Row(
         children: [
-          CircleAvatar(
-            radius: 20.r,
-            foregroundImage: AssetImage(AppAssets.kProfilePicture),
+          GestureDetector(
+            onTap: () => Get.toNamed(AppRoutes.profileScreen),
+            child: CircleAvatar(
+              radius: 20.r,
+              foregroundImage: AssetImage(AppAssets.kProfilePicture),
+            ),
           ),
           SizedBox(width: 8.w),
           Column(
