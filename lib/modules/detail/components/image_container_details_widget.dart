@@ -1,8 +1,10 @@
 import 'dart:math';
 
+import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
+import 'package:modern_movie_app/modules/detail/components/stars_widget.dart';
 import 'package:modern_movie_app/resources/app_colors.dart';
 import 'package:modern_movie_app/resources/app_typography.dart';
 
@@ -25,15 +27,19 @@ class ImageContainerDetailsWidget extends StatelessWidget {
           ),
         ),
         Positioned.fill(
-          child: Container(
-            decoration: BoxDecoration(
-              gradient: LinearGradient(
-                begin: Alignment.bottomCenter,
-                end: Alignment.topCenter,
-                colors: [
-                  AppColors.kBlackColor.withAlpha(255),
-                  Colors.transparent,
-                ],
+          child: FadeInUp(
+            controller: (controller) => controller = controller,
+            delay: const Duration(milliseconds: 500),
+            child: Container(
+              decoration: BoxDecoration(
+                gradient: LinearGradient(
+                  begin: Alignment.bottomCenter,
+                  end: Alignment.topCenter,
+                  colors: [
+                    AppColors.kBlackColor,
+                    Colors.transparent,
+                  ],
+                ),
               ),
             ),
           ),
@@ -47,82 +53,100 @@ class ImageContainerDetailsWidget extends StatelessWidget {
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  CircleAvatar(
-                    backgroundColor: AppColors.kSmokeColor.withAlpha(100),
-                    child: IconButton(
-                      padding: EdgeInsets.zero,
-                      onPressed: () => Get.back(),
-                      icon: Icon(
-                        Icons.arrow_back_ios_new,
-                        color: AppColors.kWhiteColor,
+                  SlideInLeft(
+                    controller: (controller) => controller = controller,
+                    delay: const Duration(milliseconds: 500),
+                    child: CircleAvatar(
+                      backgroundColor: AppColors.kSmokeColor.withAlpha(100),
+                      child: IconButton(
+                        padding: EdgeInsets.zero,
+                        onPressed: () => Get.back(),
+                        icon: Icon(
+                          Icons.arrow_back_ios_new,
+                          color: AppColors.kWhiteColor,
+                        ),
                       ),
                     ),
                   ),
-                  CircleAvatar(
-                    backgroundColor: AppColors.kSmokeColor.withAlpha(100),
-                    child: IconButton(
-                      padding: EdgeInsets.zero,
-                      onPressed: () {},
-                      icon: Icon(
-                        Icons.menu,
-                        color: AppColors.kWhiteColor,
+                  SlideInRight(
+                    controller: (controller) => controller = controller,
+                    delay: const Duration(milliseconds: 500),
+                    child: CircleAvatar(
+                      backgroundColor: AppColors.kSmokeColor.withAlpha(100),
+                      child: IconButton(
+                        padding: EdgeInsets.zero,
+                        onPressed: () {},
+                        icon: Icon(
+                          Icons.menu,
+                          color: AppColors.kWhiteColor,
+                        ),
                       ),
                     ),
                   ),
                 ],
               ),
               const Spacer(),
-              Text(
-                movieData.title,
-                style: AppTypography.kBold18.copyWith(
-                  color: AppColors.kWhiteColor,
+              FadeInUp(
+                controller: (controller) => controller = controller,
+                delay: const Duration(milliseconds: 600),
+                child: Text(
+                  movieData.title,
+                  style: AppTypography.kBold18.copyWith(
+                    color: AppColors.kWhiteColor,
+                  ),
                 ),
               ),
               Row(
                 children: [
-                  Text(
-                    movieData.yearOfRelease,
-                    style: AppTypography.kMedium12.copyWith(
-                      color: AppColors.kSmokeColor,
+                  FadeInUp(
+                    controller: (controller) => controller = controller,
+                    delay: const Duration(milliseconds: 700),
+                    child: Text(
+                      movieData.yearOfRelease,
+                      style: AppTypography.kMedium12.copyWith(
+                        color: AppColors.kSmokeColor,
+                      ),
                     ),
                   ),
                   SizedBox(width: 8.w),
-                  ...List.generate(5, (index) {
-                    if (index < randomRating.floor()) {
-                      return Icon(Icons.star,
-                          color: AppColors.kYellowColor, size: 12.h);
-                    } else if (index < randomRating && randomRating % 1 != 0) {
-                      return Icon(Icons.star_half,
-                          color: AppColors.kYellowColor, size: 12.h);
-                    } else {
-                      return Icon(Icons.star,
-                          color: AppColors.kSmokeColor, size: 12.h);
-                    }
-                  }),
+                  FadeInUp(
+                    controller: (controller) => controller = controller,
+                    delay: const Duration(milliseconds: 800),
+                    child: StarsWidget(),
+                  ),
                   SizedBox(width: 8.w),
-                  Text(
-                    movieData.duration,
-                    style: AppTypography.kMedium12.copyWith(
-                      color: AppColors.kSmokeColor,
+                  FadeInUp(
+                    controller: (controller) => controller = controller,
+                    delay: const Duration(milliseconds: 900),
+                    child: Text(
+                      movieData.duration,
+                      style: AppTypography.kMedium12.copyWith(
+                        color: AppColors.kSmokeColor,
+                      ),
                     ),
                   ),
                 ],
               ),
               SizedBox(height: 10.h),
-              Container(
-                padding: EdgeInsets.symmetric(horizontal: 10.w, vertical: 2.h),
-                decoration: BoxDecoration(
-                  border: Border.all(
-                    color: AppColors.kWhiteColor.withAlpha(20),
-                    width: 1,
+              FadeInUp(
+                controller: (controller) => controller = controller,
+                delay: const Duration(milliseconds: 1000),
+                child: Container(
+                  padding:
+                      EdgeInsets.symmetric(horizontal: 10.w, vertical: 2.h),
+                  decoration: BoxDecoration(
+                    border: Border.all(
+                      color: AppColors.kWhiteColor.withAlpha(20),
+                      width: 1,
+                    ),
+                    borderRadius: BorderRadius.circular(20.r),
+                    color: AppColors.kSmokeColor.withAlpha(50),
                   ),
-                  borderRadius: BorderRadius.circular(20.r),
-                  color: AppColors.kSmokeColor.withAlpha(50),
-                ),
-                child: Text(
-                  movieData.genre,
-                  style: AppTypography.kMedium10.copyWith(
-                    color: AppColors.kWhiteColor,
+                  child: Text(
+                    movieData.genre,
+                    style: AppTypography.kMedium10.copyWith(
+                      color: AppColors.kWhiteColor,
+                    ),
                   ),
                 ),
               ),
