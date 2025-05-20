@@ -30,7 +30,7 @@ class ImageContainerDetailsWidget extends StatelessWidget {
                 begin: Alignment.bottomCenter,
                 end: Alignment.topCenter,
                 colors: [
-                  AppColors.kBlackColor.withAlpha(200),
+                  AppColors.kBlackColor.withAlpha(255),
                   Colors.transparent,
                 ],
               ),
@@ -111,8 +111,12 @@ class ImageContainerDetailsWidget extends StatelessWidget {
               Container(
                 padding: EdgeInsets.symmetric(horizontal: 10.w, vertical: 2.h),
                 decoration: BoxDecoration(
+                  border: Border.all(
+                    color: AppColors.kWhiteColor.withAlpha(20),
+                    width: 1,
+                  ),
                   borderRadius: BorderRadius.circular(20.r),
-                  color: AppColors.kSmokeColor.withAlpha(100),
+                  color: AppColors.kSmokeColor.withAlpha(50),
                 ),
                 child: Text(
                   movieData['Genre'] ?? '',

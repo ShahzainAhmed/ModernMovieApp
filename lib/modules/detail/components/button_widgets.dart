@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:modern_movie_app/resources/app_colors.dart';
 import 'package:modern_movie_app/resources/app_typography.dart';
 
 class ButtonWidgets extends StatelessWidget {
@@ -12,7 +13,7 @@ class ButtonWidgets extends StatelessWidget {
   final double? height;
   final bool isSizedBox;
   final bool iconOnRight;
-  final double iconSize; // New parameter
+  final double iconSize;
 
   const ButtonWidgets({
     super.key,
@@ -25,7 +26,7 @@ class ButtonWidgets extends StatelessWidget {
     this.height,
     this.isSizedBox = false,
     this.iconOnRight = false,
-    this.iconSize = 24.0, // Default icon size
+    this.iconSize = 24.0,
   });
 
   @override
@@ -38,6 +39,7 @@ class ButtonWidgets extends StatelessWidget {
         horizontal: width,
       ),
       decoration: BoxDecoration(
+        border: Border.all(color: AppColors.kWhiteColor.withAlpha(20)),
         borderRadius: BorderRadius.circular(50.r),
         color: buttonColor,
       ),
