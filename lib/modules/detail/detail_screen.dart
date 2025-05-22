@@ -3,8 +3,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:modern_movie_app/models/button_info.dart';
+import 'package:modern_movie_app/models/movie_tiles_model.dart';
 import 'package:modern_movie_app/modules/detail/components/button_widgets.dart';
 import 'package:modern_movie_app/modules/detail/components/image_container_details_widget.dart';
+import 'package:modern_movie_app/modules/home/components/latest_movie_tiles.dart';
 import 'package:modern_movie_app/resources/app_colors.dart';
 import 'package:modern_movie_app/resources/app_typography.dart';
 
@@ -177,26 +179,27 @@ class _DetailScreenState extends State<DetailScreen> {
                   ),
                   SizedBox(height: 20.h),
                   // Hero Tag issue -< Had to disable it >-
-                  // SizedBox(
-                  //   height: 200.h,
-                  //   child: FadeInRight(
-                  //     animate: animate,
-                  //     controller: (controller) => controller = controller,
-                  //     delay: const Duration(milliseconds: 1000),
-                  //     child: ListView.separated(
-                  //       itemCount: movieTileList.length,
-                  //       padding: EdgeInsets.symmetric(horizontal: 20.w),
-                  //       physics: BouncingScrollPhysics(),
-                  //       scrollDirection: Axis.horizontal,
-                  //       separatorBuilder: (context, index) =>
-                  //           SizedBox(width: 12.w),
-                  //       itemBuilder: (context, index) => LatestMovieTiles(
-                  //         onTap: () {},
-                  //         movieTilesModel: movieTileList[index],
-                  //       ),
-                  //     ),
-                  //   ),
-                  // ),
+                  SizedBox(
+                    height: 200.h,
+                    child: FadeInRight(
+                      animate: animate,
+                      controller: (controller) => controller = controller,
+                      delay: const Duration(milliseconds: 1000),
+                      child: ListView.separated(
+                        itemCount: movieTileList.length,
+                        padding: EdgeInsets.symmetric(horizontal: 20.w),
+                        physics: BouncingScrollPhysics(),
+                        scrollDirection: Axis.horizontal,
+                        separatorBuilder: (context, index) =>
+                            SizedBox(width: 12.w),
+                        itemBuilder: (context, index) => LatestMovieTiles(
+                          enableHero: false,
+                          onTap: () {},
+                          movieTilesModel: movieTileList[index],
+                        ),
+                      ),
+                    ),
+                  ),
                 ],
               ),
             ),
