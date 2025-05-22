@@ -3,10 +3,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:modern_movie_app/modules/components/primary_button.dart';
+import 'package:modern_movie_app/modules/home/components/bottom_navbar_widget.dart';
 import 'package:modern_movie_app/resources/app_assets.dart';
 import 'package:modern_movie_app/resources/app_colors.dart';
 import 'package:modern_movie_app/resources/app_typography.dart';
-import 'package:modern_movie_app/routes/app_routes.dart';
 
 class OnboardingScreen extends StatelessWidget {
   const OnboardingScreen({super.key});
@@ -78,7 +78,7 @@ class OnboardingScreen extends StatelessWidget {
                   delay: const Duration(milliseconds: 800),
                   child: PrimaryButton(
                     title: "Get Started",
-                    onTap: () => Get.toNamed(AppRoutes.homeScreen),
+                    onTap: () => Get.offAll(() => BottomNavbarWidget()),
                     backgroundColor: AppColors.kBlueColor,
                   ),
                 ),

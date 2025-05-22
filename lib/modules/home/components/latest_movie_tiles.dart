@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:get/get.dart';
 import 'package:modern_movie_app/models/movie_tiles_model.dart';
 import 'package:modern_movie_app/resources/app_colors.dart';
 import 'package:modern_movie_app/resources/app_typography.dart';
@@ -8,12 +7,15 @@ import 'package:modern_movie_app/resources/app_typography.dart';
 class LatestMovieTiles extends StatelessWidget {
   final VoidCallback onTap;
   final MovieTilesModel movieTilesModel;
-  const LatestMovieTiles(
-      {super.key, required this.movieTilesModel, required this.onTap});
+
+  const LatestMovieTiles({
+    super.key,
+    required this.movieTilesModel,
+    required this.onTap,
+  });
 
   @override
   Widget build(BuildContext context) {
-    var movieData = Get.arguments;
     return GestureDetector(
       onTap: onTap,
       child: SizedBox(

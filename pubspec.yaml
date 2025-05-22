@@ -39,6 +39,8 @@ dependencies:
   http: ^1.4.0
   animate_do: ^4.2.0
   bounce: ^1.0.2
+  curved_labeled_navigation_bar: ^2.0.6
+  persistent_bottom_nav_bar_v2: ^6.0.1
 
 dev_dependencies:
   flutter_test:

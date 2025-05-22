@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
-import 'package:modern_movie_app/resources/app_themes.dart';
+import 'package:modern_movie_app/resources/app_colors.dart';
 import 'package:modern_movie_app/routes/app_pages.dart';
 import 'package:modern_movie_app/routes/app_routes.dart';
 
@@ -20,7 +20,12 @@ class MyApp extends StatelessWidget {
         debugShowCheckedModeBanner: false,
         title: 'Flutter Demo',
         getPages: AppPages.allPages,
-        theme: Themes.primaryTheme,
+        // theme: Themes.primaryTheme,
+        theme: ThemeData(
+          bottomSheetTheme: const BottomSheetThemeData(
+            backgroundColor: AppColors.kTransparentColor,
+          ),
+        ),
         initialRoute: AppRoutes.onboardingScreen,
       ),
     );
