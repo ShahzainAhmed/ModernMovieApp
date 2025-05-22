@@ -1,6 +1,8 @@
 import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get/get.dart';
+import 'package:modern_movie_app/models/movie_tiles_model.dart';
 import 'package:modern_movie_app/modules/auth/components/background_gradient_card.dart';
 import 'package:modern_movie_app/modules/components/custom_appbar.dart';
 import 'package:modern_movie_app/modules/home/components/category_tiles.dart';
@@ -8,6 +10,7 @@ import 'package:modern_movie_app/modules/home/components/latest_movie_tiles.dart
 import 'package:modern_movie_app/modules/home/components/upcoming_movie_tiles.dart';
 import 'package:modern_movie_app/resources/app_colors.dart';
 import 'package:modern_movie_app/resources/app_typography.dart';
+import 'package:modern_movie_app/routes/app_routes.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -74,7 +77,22 @@ class HomeScreen extends StatelessWidget {
               child: FadeInRight(
                 controller: (controller) => controller = controller,
                 delay: const Duration(milliseconds: 900),
-                child: LatestMovieTiles(),
+                child: ListView.separated(
+                  itemCount: movieTileList.length,
+                  padding: EdgeInsets.symmetric(horizontal: 20.w),
+                  physics: BouncingScrollPhysics(),
+                  scrollDirection: Axis.horizontal,
+                  separatorBuilder: (context, index) => SizedBox(width: 12.w),
+                  itemBuilder: (context, index) => LatestMovieTiles(
+                    movieTilesModel: movieTileList[index],
+                    onTap: () {
+                      Get.toNamed(
+                        AppRoutes.detailScreen,
+                        arguments: movieTileList[index],
+                      );
+                    },
+                  ),
+                ),
               ),
             ),
             SizedBox(height: 20.h),

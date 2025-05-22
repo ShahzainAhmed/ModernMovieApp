@@ -1,29 +1,35 @@
-import 'dart:math';
-
 import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
+import 'package:modern_movie_app/models/movie_tiles_model.dart';
 import 'package:modern_movie_app/modules/detail/components/stars_widget.dart';
 import 'package:modern_movie_app/resources/app_colors.dart';
 import 'package:modern_movie_app/resources/app_typography.dart';
 
 class ImageContainerDetailsWidget extends StatelessWidget {
-  const ImageContainerDetailsWidget({super.key});
+  final bool animate;
+  final VoidCallback onBackPressed;
+
+  const ImageContainerDetailsWidget({
+    super.key,
+    required this.animate,
+    required this.onBackPressed,
+  });
 
   @override
   Widget build(BuildContext context) {
-    final movieData = Get.arguments;
-    final List<double> ratingOptions = [2.6, 3.5, 4.5, 5.0];
-    final double randomRating =
-        ratingOptions[Random().nextInt(ratingOptions.length)];
+    var movieData = Get.arguments;
     return Stack(
       children: [
         Positioned.fill(
-          child: Image.asset(
-            movieData.image,
-            fit: BoxFit.cover,
-            alignment: Alignment.topCenter,
+          child: Hero(
+            tag: movieData.image,
+            child: Image.asset(
+              movieData.image,
+              fit: BoxFit.cover,
+              alignment: Alignment.topCenter,
+            ),
           ),
         ),
         Positioned.fill(
@@ -53,14 +59,15 @@ class ImageContainerDetailsWidget extends StatelessWidget {
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  SlideInLeft(
+                  FadeInLeft(
+                    animate: animate,
                     controller: (controller) => controller = controller,
                     delay: const Duration(milliseconds: 500),
                     child: CircleAvatar(
                       backgroundColor: AppColors.kSmokeColor.withAlpha(100),
                       child: IconButton(
                         padding: EdgeInsets.zero,
-                        onPressed: () => Get.back(),
+                        onPressed: onBackPressed,
                         icon: Icon(
                           Icons.arrow_back_ios_new,
                           color: AppColors.kWhiteColor,
@@ -68,7 +75,8 @@ class ImageContainerDetailsWidget extends StatelessWidget {
                       ),
                     ),
                   ),
-                  SlideInRight(
+                  FadeInRight(
+                    animate: animate,
                     controller: (controller) => controller = controller,
                     delay: const Duration(milliseconds: 500),
                     child: CircleAvatar(
@@ -87,6 +95,7 @@ class ImageContainerDetailsWidget extends StatelessWidget {
               ),
               const Spacer(),
               FadeInUp(
+                animate: animate,
                 controller: (controller) => controller = controller,
                 delay: const Duration(milliseconds: 600),
                 child: Text(
@@ -99,6 +108,7 @@ class ImageContainerDetailsWidget extends StatelessWidget {
               Row(
                 children: [
                   FadeInUp(
+                    animate: animate,
                     controller: (controller) => controller = controller,
                     delay: const Duration(milliseconds: 700),
                     child: Text(
@@ -110,12 +120,14 @@ class ImageContainerDetailsWidget extends StatelessWidget {
                   ),
                   SizedBox(width: 8.w),
                   FadeInUp(
+                    animate: animate,
                     controller: (controller) => controller = controller,
                     delay: const Duration(milliseconds: 800),
                     child: StarsWidget(),
                   ),
                   SizedBox(width: 8.w),
                   FadeInUp(
+                    animate: animate,
                     controller: (controller) => controller = controller,
                     delay: const Duration(milliseconds: 900),
                     child: Text(
@@ -129,6 +141,7 @@ class ImageContainerDetailsWidget extends StatelessWidget {
               ),
               SizedBox(height: 10.h),
               FadeInUp(
+                animate: animate,
                 controller: (controller) => controller = controller,
                 delay: const Duration(milliseconds: 1000),
                 child: Container(
