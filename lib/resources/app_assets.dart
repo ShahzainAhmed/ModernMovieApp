@@ -1,5 +1,6 @@
 class AppAssets {
   static const kProfilePicture = 'assets/profile.jpeg';
+  static const kTiktok = 'assets/tiktok.jpg';
   static const kOnboarding = 'assets/onboarding.jpg';
   static const kPicture1 = 'assets/picture1.png';
   static const kPicture2 = 'assets/picture2.jpg';

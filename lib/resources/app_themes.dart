@@ -6,7 +6,7 @@ class Themes {
   static ThemeData primaryTheme = ThemeData(
     brightness: Brightness.light,
     appBarTheme: AppBarTheme(
-      color: AppColors.kWhiteColor,
+      backgroundColor: AppColors.kWhiteColor,
       scrolledUnderElevation: 0.0,
       elevation: 0.0,
     ),
