@@ -18,7 +18,6 @@ class DetailScreen extends StatefulWidget {
 }
 
 class _DetailScreenState extends State<DetailScreen> {
-  @override
   bool animate = true;
 
   void reverseAndPop() async {
